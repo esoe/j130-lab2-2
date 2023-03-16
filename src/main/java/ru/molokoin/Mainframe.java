@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 public class Mainframe extends JFrame{
     private Container contentPane; 
     private ConnectionPane connectionPane;
-    private TableChooserPane tableChooserPane;
+    private ReportPane reportPane;
 
     public Mainframe(){
         setTitle("MAINFRAME : table-viewer");
@@ -23,6 +23,8 @@ public class Mainframe extends JFrame{
         contentPane = getContentPane();
         connectionPane = new ConnectionPane();
         contentPane.add(connectionPane, BorderLayout.WEST);
+        reportPane = new ReportPane();
+        contentPane.add(reportPane, BorderLayout.CENTER);
         pack();
         setVisible(true);
     }
