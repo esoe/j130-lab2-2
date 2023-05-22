@@ -34,11 +34,11 @@ public class ConnectionPane extends JPanel{
      */
     private JButton connectionButton;
     //BaseChooser
-    private JLabel baseChooserLabel;
-    private JComboBox<String> baseChooserCombo;
+    // private JLabel baseChooserLabel;
+    // private JComboBox<String> baseChooserCombo;
     //TableChooser
-    private JLabel tableChooserLabel;
-    private JComboBox<String> tableChooserCombo;
+    // private JLabel tableChooserLabel;
+    // private JComboBox<String> tableChooserCombo;
 
 
     
@@ -73,13 +73,13 @@ public class ConnectionPane extends JPanel{
         passwordField = new JPasswordField();
         centerpane.add(Mainframe.duopane(passwordLabel, passwordField));
 
-        baseChooserLabel = new JLabel("Наименование базы: ");
-        baseChooserCombo = new JComboBox();
-        centerpane.add(Mainframe.duopane(baseChooserLabel, baseChooserCombo));
+        // baseChooserLabel = new JLabel("Наименование базы: ");
+        // baseChooserCombo = new JComboBox();
+        // centerpane.add(Mainframe.duopane(baseChooserLabel, baseChooserCombo));
 
-        tableChooserLabel = new JLabel("Наименование таблицы: ");
-        tableChooserCombo = new JComboBox();
-        centerpane.add(Mainframe.duopane(tableChooserLabel, tableChooserCombo));
+        // tableChooserLabel = new JLabel("Наименование таблицы: ");
+        // tableChooserCombo = new JComboBox();
+        // centerpane.add(Mainframe.duopane(tableChooserLabel, tableChooserCombo));
         
         return centerpane;
     }
