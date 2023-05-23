@@ -39,9 +39,9 @@ public class Mainframe extends JFrame{
         return pane;
     }
 
-    public Container getContentPane() {
-        return contentPane;
-    }
+    // public Container getContentPane() {
+    //     return contentPane;
+    // }
 
     public ConnectionPane getConnectionPane() {
         return connectionPane;

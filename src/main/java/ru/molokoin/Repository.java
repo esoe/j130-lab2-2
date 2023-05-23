@@ -10,18 +10,20 @@ public class Repository {
 
     public Repository(){
         getAccess().setDriver("driver");
-        getAccess().setLink("link");
+        getAccess().setHost("host");
         getAccess().setPort("port");
         getAccess().setLogin("login");
         getAccess().setPassword("password");
+        getAccess().setLink();
     }
 
-    public Repository(String driver, String link, String port, String login, String password){
+    public Repository(String driver, String host, String port, String login, String password){
         getAccess().setDriver(driver);
-        getAccess().setLink(link);
+        getAccess().setHost(host);
         getAccess().setPort(port);
         getAccess().setLogin(login);
         getAccess().setPassword(password);
+        getAccess().setLink();
     }
     /**
      * @param access the access to set
