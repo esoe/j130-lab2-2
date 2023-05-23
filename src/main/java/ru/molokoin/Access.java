@@ -1,13 +1,16 @@
 package ru.molokoin;
 public class Access {
     private String link;
+    private String port;
+    private String driver;
     private String login;
     private String password;
     /**
      * @param link the link to set
      */
     public void setLink(String link) {
-        this.link = "jdbc:MySQL://" + link + ":3306";
+        this.link = link;
+        //"jdbc:MySQL://" + link + ":3306";
     }
     /**
      * @return the link
@@ -39,5 +42,18 @@ public class Access {
     public String getPassword() {
         return password;
     }
+    public String getPort() {
+        return port;
+    }
+    public void setPort(String port) {
+        this.port = port;
+    }
+    public String getDriver() {
+        return driver;
+    }
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
+    
 
 }

@@ -83,4 +83,30 @@ public class ConnectionPane extends JPanel{
         
         return centerpane;
     }
+
+    public JTextField getHostField() {
+        return hostField;
+    }
+
+    public JTextField getPortField() {
+        return portField;
+    }
+
+    public JTextField getDriverField() {
+        return driverField;
+    }
+
+    public JTextField getLoginField() {
+        return loginField;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public JButton getConnectionButton() {
+        return connectionButton;
+    }
+
+    
 }

@@ -9,13 +9,17 @@ public class Repository {
     private Access access = new Access();
 
     public Repository(){
+        getAccess().setDriver("driver");
         getAccess().setLink("link");
+        getAccess().setPort("port");
         getAccess().setLogin("login");
         getAccess().setPassword("password");
     }
 
-    public Repository(String link, String login, String password){
+    public Repository(String driver, String link, String port, String login, String password){
+        getAccess().setDriver(driver);
         getAccess().setLink(link);
+        getAccess().setPort(port);
         getAccess().setLogin(login);
         getAccess().setPassword(password);
     }
