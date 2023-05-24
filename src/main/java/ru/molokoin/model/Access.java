@@ -1,4 +1,4 @@
-package ru.molokoin;
+package ru.molokoin.model;
 public class Access {
     private String link;
     private String host;

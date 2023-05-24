@@ -1,7 +1,9 @@
 package ru.molokoin;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import ru.molokoin.controller.BaseChooserListener;
+import ru.molokoin.controller.ConnectionButtonListener;
+import ru.molokoin.model.Repository;
+import ru.molokoin.view.Mainframe;
 
 /**
  * Основной класс сборки приложения,
@@ -18,38 +20,17 @@ public class App {
      * 
      */
     private void init() {
-        mainframe = new Mainframe();
-        mainframe.getConnectionPane().getConnectionButton().addActionListener(e -> {
-            /**
-             * Вывод учетных данных в консоль
-             */
-            String driver = mainframe.getConnectionPane().getDriverField().getText();
-            String host = mainframe.getConnectionPane().getHostField().getText();
-            String port = mainframe.getConnectionPane().getPortField().getText();
-            String login = mainframe.getConnectionPane().getLoginField().getText();
-            String password = String.valueOf(mainframe.getConnectionPane().getPasswordField().getPassword());
-
-            System.out.println("Попытка подключения к базе данных >>");
-            System.out.println("driver: " + driver);
-            System.out.println("host: " + host);
-            System.out.println("port: " + port);
-            System.out.println("login: " + login);
-            System.out.println("password: " + password);
-
-            repository = new Repository(driver, host, port, login, password);
-            repository.connect();
-            //список баз в консоль
-            ResultSet rs =  repository.querry("SHOW DATABASES");
-            try {
-                while (rs.next()){
-                    System.out.println(rs.getString(1));
-                }
-            } catch (SQLException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-            }
-            // далее ... можно открывать форму отчета (ReportPane) и листать базы и таблицы сервера
-        });
+        /**
+         * Формируем представление
+         * - передаем модель (data-model, для представления таблиц в report-pane)
+         */
+        mainframe = new Mainframe(repository);
+        /**
+         * Добавляем контроллеры
+         * - передаем представление и модель (repository, для доступа к данным)
+         */
+        mainframe.getConnectionPane().getConnectionButton().addActionListener(new ConnectionButtonListener(mainframe, repository));
+        
     }
 
     public static void main( String[] args ){

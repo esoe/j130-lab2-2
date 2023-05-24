@@ -1,12 +1,10 @@
-package ru.molokoin;
+package ru.molokoin.view;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
 import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 
