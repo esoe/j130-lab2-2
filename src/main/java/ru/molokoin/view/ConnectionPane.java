@@ -1,12 +1,10 @@
-package ru.molokoin;
+package ru.molokoin.view;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
 import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 
@@ -33,14 +31,6 @@ public class ConnectionPane extends JPanel{
      * сделать попытку подключения по каждому клику в поле
      */
     private JButton connectionButton;
-    //BaseChooser
-    private JLabel baseChooserLabel;
-    private JComboBox<String> baseChooserCombo;
-    //TableChooser
-    private JLabel tableChooserLabel;
-    private JComboBox<String> tableChooserCombo;
-
-
     
     public ConnectionPane(){
         setLayout(new BorderLayout());
@@ -72,15 +62,33 @@ public class ConnectionPane extends JPanel{
         passwordLabel = new JLabel("Пароль: ");
         passwordField = new JPasswordField();
         centerpane.add(Mainframe.duopane(passwordLabel, passwordField));
-
-        baseChooserLabel = new JLabel("Наименование базы: ");
-        baseChooserCombo = new JComboBox();
-        centerpane.add(Mainframe.duopane(baseChooserLabel, baseChooserCombo));
-
-        tableChooserLabel = new JLabel("Наименование таблицы: ");
-        tableChooserCombo = new JComboBox();
-        centerpane.add(Mainframe.duopane(tableChooserLabel, tableChooserCombo));
         
         return centerpane;
     }
+
+    public JTextField getHostField() {
+        return hostField;
+    }
+
+    public JTextField getPortField() {
+        return portField;
+    }
+
+    public JTextField getDriverField() {
+        return driverField;
+    }
+
+    public JTextField getLoginField() {
+        return loginField;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public JButton getConnectionButton() {
+        return connectionButton;
+    }
+
+    
 }
